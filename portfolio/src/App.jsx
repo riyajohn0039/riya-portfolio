@@ -1,4 +1,8 @@
 import React from 'react';
+// IMPORT YOUR IMAGE HERE:
+import profilePic from './assets/profile.jpg'; 
+// If you don't have a photo yet, comment out the line above 
+// and use the placeholder link in the <img> tag below.
 
 function App() {
   return (
@@ -7,7 +11,19 @@ function App() {
       <div className="max-w-2xl w-full bg-white shadow-xl rounded-2xl overflow-hidden">
         
         {/* Header Section */}
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-8 text-white flex flex-col items-center text-center">
+          
+          {/* PROFILE IMAGE */}
+          <div className="w-32 h-32 mb-4 rounded-full border-4 border-white overflow-hidden shadow-lg">
+            <img 
+              src={profilePic} 
+              alt="Riya John" 
+              className="w-full h-full object-cover"
+              // If you have NO photo, delete "src={profilePic}" and paste this URL inside src:
+              // "https://api.dicebear.com/7.x/avataaars/svg?seed=Riya"
+            />
+          </div>
+
           <h1 className="text-4xl font-bold mb-2">Riya John</h1>
           <p className="text-lg opacity-90">Java Developer | React Learner</p>
         </div>
