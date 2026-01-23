@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-6 text-gray-800 font-sans">
       
-      <div className="max-w-2xl w-full bg-white shadow-xl rounded-2xl overflow-hidden">
+      <div className="max-w-2xl w-full bg-white shadow-xl rounded-2xl overflow-hidden animate-fade-in-up">
         
         {/* Header Section */}
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-8 text-white flex flex-col items-center text-center">
