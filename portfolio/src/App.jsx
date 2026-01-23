@@ -1,8 +1,6 @@
 import React from 'react';
-// IMPORT YOUR IMAGE HERE:
 import profilePic from './assets/profile.jpg'; 
-// If you don't have a photo yet, comment out the line above 
-// and use the placeholder link in the <img> tag below.
+import { photoData } from './data';
 
 function App() {
   return (
@@ -46,6 +44,34 @@ function App() {
               <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Spring Boot</span>
               <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-medium">React</span>
               <span className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">GitHub Actions</span>
+            </div>
+          </section>
+          {/* Gallery Section - Generating HTML from Data */}
+          <section>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-3 border-b pb-2">My Favourites</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
+              {/* This 'map' function is how React loops through data */}
+              {photoData.map((photo) => (
+                <div key={photo.id} className="group relative overflow-hidden rounded-lg shadow-md cursor-pointer">
+                  
+                  {/* The Image from the Cloud URL */}
+                  <img 
+                    src={photo.url} 
+                    alt={photo.desc} 
+                    className="w-full h-48 object-cover transform transition duration-300 group-hover:scale-110"
+                  />
+                  
+                  {/* The Hover Overlay */}
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition duration-300 flex items-center justify-center">
+                    <p className="text-white opacity-0 group-hover:opacity-100 font-medium transition duration-300">
+                      
+                    </p>
+                  </div>
+                  
+                </div>
+              ))}
+              
             </div>
           </section>
         </div>
